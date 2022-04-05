@@ -108,15 +108,12 @@ $lots = [
         <h2 class="promo__title">Нужен стафф для катки?</h2>
         <p class="promo__text">На нашем интернет-аукционе ты найдёшь самое эксклюзивное сноубордическое и горнолыжное снаряжение.</p>
         <ul class="promo__list">
-          <?php
-        $index = 0;
-        $num = count($cats);
-        while ($index < $num): ?>
+          <?php  foreach ($cats as $cat): ?>
             <li class="promo__item promo__item--boards">
-                <a class="promo__link" href="pages/all-lots.html"><?=$cats[$index];?></a>
+                <a class="promo__link" href="pages/all-lots.html"><?=$cat;?></a>
             </li>
-            <?php $index++; ?>
-    <?php endwhile; ?>
+          <?php $cat++ ?>
+    <?php endforeach; ?>
         </ul>
     </section>
     <section class="lots">
@@ -153,15 +150,13 @@ $lots = [
 <footer class="main-footer">
     <nav class="nav">
         <ul class="nav__list container">
-          <?php
-        $index = 0;
-        $num = count($cats);
-        while ($index < $num): ?>
+
+        <?php foreach ($cats as $cat): ?>
             <li class="nav__item">
-                <a href="pages/all-lots.html"><?=$cats[$index];?></a>
+                <a href="pages/all-lots.html"><?=$cat;?></a>
             </li>
-            <?php $index++; ?>
-    <?php endwhile; ?>
+            <?php $cat++; ?>
+    <?php endforeach; ?>
         </ul>
     </nav>
     <div class="main-footer__bottom container">
