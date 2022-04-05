@@ -112,7 +112,6 @@ $lots = [
             <li class="promo__item promo__item--boards">
                 <a class="promo__link" href="pages/all-lots.html"><?=$cat;?></a>
             </li>
-          <?php $cat++ ?>
     <?php endforeach; ?>
         </ul>
     </section>
@@ -155,7 +154,6 @@ $lots = [
             <li class="nav__item">
                 <a href="pages/all-lots.html"><?=$cat;?></a>
             </li>
-            <?php $cat++; ?>
     <?php endforeach; ?>
         </ul>
     </nav>
