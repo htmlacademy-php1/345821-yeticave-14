@@ -51,13 +51,32 @@ $lots = [
 ];
  ?>
 
+ <?php
+
+
+
+ function retail_price($output)
+
+  {
+
+     if ($output < 1000) {
+           $outputb = ceil($output);
+         } else  {
+
+           $outputb = number_format(ceil($output), 0,'', ' ');
+
+         }
+
+     return $outputb .' ₽';
+ }
+ ?>
+
 
 
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Главная</title>
     <link href="../css/normalize.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
 </head>
@@ -132,7 +151,7 @@ $lots = [
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount"><?=$val['price']; ?></span>
-                            <span class="lot__cost"><?=$val['price']; ?><b class="rub">р</b></span>
+                            <span class="lot__cost"><?=retail_price($val['price']); ?><b class="rub">р</b></span>
                         </div>
                         <div class="lot__timer timer">
                             12:23
