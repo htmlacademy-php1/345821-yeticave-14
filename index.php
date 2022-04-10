@@ -56,9 +56,8 @@ $lots = [
 
 
  function retail_price($number)
-
   {
-$numbers = ceil($number)
+$numbers = ceil($number);
      if ($numbers < 1000) {
            $total_number = $numbers;
          } else  {
