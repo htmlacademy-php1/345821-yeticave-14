@@ -55,19 +55,19 @@ $lots = [
 
 
 
- function retail_price($output)
+ function retail_price($number)
 
   {
-
-     if ($output < 1000) {
-           $outputb = ceil($output);
+$numbers = ceil($number)
+     if ($numbers < 1000) {
+           $total_number = $numbers;
          } else  {
 
-           $outputb = number_format(ceil($output), 0,'', ' ');
+           $total_number = number_format($numbers, 0,'', ' ');
 
          }
 
-     return $outputb .' ₽';
+     return $total_number .' ₽';
  }
  ?>
 
