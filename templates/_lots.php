@@ -13,7 +13,7 @@
                         <span class="lot__cost"><?=htmlspecialchars(retail_price($lot['price'])); ?></span>
                     </div>
                     <div class="lot__timer timer">
-                        12:23
+                        <?=$lot['time'];?>
                     </div>
                 </div>
             </div>
