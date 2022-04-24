@@ -3,14 +3,10 @@ $is_auth = rand(0, 1);
 
 $user_name = 'Ignat Polnyakov'; // укажите здесь ваше имя
 ?>
-
 <?php
 $categories = [
   "Доски и лыжи", "Крепления", "Ботинки", "Одежда", "Инструменты", "Разное"
 ];
-
-?>
-<?php
 $lots = [
   [
     'name' => '2014 Rossignol District Snowboard',
@@ -46,7 +42,7 @@ $lots = [
     'cat' => 'Одежда',
     'price' => 7500,
     'pic' => 'img/lot-5.jpg',
-    'time' => "2022-04-21"
+    'time' => "2022-04-30"
 ],
 [
     'name' => 'Маска Oakley Canopy',
