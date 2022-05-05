@@ -11,33 +11,32 @@ $numbers = ceil($number);
 }
 ?>
 
-<?php
 
-function expired_timeA($val)
-{
-$dt_end = date_create($val);
-$dt_now = date_create("now");
-$dt_diff = date_diff($dt_end, $dt_now);
-$days_count = date_interval_format($dt_diff, "%a");
-return $days_count ;
-}
- ?>
  <?php
  date_default_timezone_set("Europe/Moscow");
  function expired_time($val)
  {
+$total_end = strtotime($val);
+$dt_now = time();
+$total_time = $total_end-$dt_now;
+$hours = floor($total_time / 3600);
+$minutes = floor(($total_time % 3600)/60);
+return "$hours : $minutes" ;
+}
+  ?>
 
- $dt_end = ($val);
- $total_end = strtotime($dt_end);
+
+<?php
+date_default_timezone_set("Europe/Moscow");
+function change_class($val){
+$total_end = strtotime($val);
 $dt_now = time();
 $total_time = $total_end-$dt_now;
 $hours = floor($total_time / 3600);
 $minutes = floor(($total_time % 3600)/60);
 if ($hours < 1) {
- print '<div class="timer--finishing"> ';
+$total = 'timer--finishing';
 }
-
-return "$hours : $minutes" ;
+return $total ;
 }
-
-  ?>
+ ?>
