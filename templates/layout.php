@@ -1,14 +1,7 @@
 
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-
     <meta charset="UTF-8">
     <title><?=$title;?></title>
     <link href="../css/normalize.min.css" rel="stylesheet">
@@ -16,7 +9,6 @@
 </head>
 <body>
 <div class="page-wrapper">
-
 <header class="main-header">
     <div class="main-header__container container">
         <h1 class="visually-hidden">YetiCave</h1>
@@ -28,12 +20,9 @@
             <input class="main-header__search-btn" type="submit" name="find" value="Найти">
         </form>
         <a class="main-header__add-lot button" href="pages/add-lot.html">Добавить лот</a>
-
         <nav class="user-menu">
-
           <?php if ($is_auth == 1) : ?>
             <div class="user-menu__logged">
-
             <p><?=$user_name; ?></p>
             <a class="user-menu__bets" href="pages/my-bets.html">Мои ставки</a>
             <a class="user-menu__logout" href="#">Выход</a>
@@ -48,14 +37,10 @@
             </li>
           </ul>
           <?php endif; ?>
-
-
         <!-- здесь должен быть PHP код для показа меню и данных пользователя -->
-
         </nav>
     </div>
 </header>
-
 <section class="promo">
     <h2 class="promo__title">Нужен стафф для катки?</h2>
     <p class="promo__text">На нашем интернет-аукционе ты найдёшь самое эксклюзивное сноубордическое и горнолыжное снаряжение.</p>
@@ -67,18 +52,13 @@
 <?php endforeach; ?>
     </ul>
 </section>
-
 <main class="container">
 <?=$content;?>
 </main>
 </div>
-
-
-
 <footer class="main-footer">
     <nav class="nav">
         <ul class="nav__list container">
-
         <?php foreach ($categories as $cat): ?>
             <li class="nav__item">
                 <a href="pages/all-lots.html"><?=$cat;?></a>
@@ -127,7 +107,6 @@
         </div>
     </div>
 </footer>
-
 <script src="flatpickr.js"></script>
 <script src="script.js"></script>
 </body>

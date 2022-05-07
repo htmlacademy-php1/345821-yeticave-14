@@ -12,8 +12,8 @@
                         <span class="lot__amount"><?=htmlspecialchars($lot['price']); ?></span>
                         <span class="lot__cost"><?=htmlspecialchars(retail_price($lot['price'])); ?></span>
                     </div>
-                    <div class="lot__timer timer">
-                        12:23
+                    <div class="lot__timer timer"<?=change_class($lot['time'])?>>
+                        <?=expired_time($lot['time']);?>
                     </div>
                 </div>
             </div>
