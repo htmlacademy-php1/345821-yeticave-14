@@ -44,5 +44,5 @@ UPDATE lots SET name = 'DC Ply Mens 2017/2018 Snowboard' WHERE id = 2; --обн�
 
 SELECT b.price,
 FROM bet b
-WHERE id = 5
+WHERE b.lot_id = 5
 ORDER BY b.created_at DESC ;--получить список ставок для лота по его идентификатору с сортировкой по дате.
