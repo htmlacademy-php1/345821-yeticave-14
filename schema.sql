@@ -1,5 +1,4 @@
-CREATE
-  DATABASE yeticave
+CREATE DATABASE yeticave
   DEFAULT CHARACTER SET utf8
   DEFAULT COLLATE utf8_general_ci;
 
@@ -19,9 +18,7 @@ CREATE TABLE users
   email      VARCHAR(64)  NOT NULL UNIQUE,
   name       VARCHAR(90)  NOT NULL,
   password   VARCHAR(50)  NOT NULL,
-  contacts   VARCHAR(128) NOT NULL,
-  bet_id     INT          NOT NULL,
-  lot_id     INT          NOT NULL
+  contacts   VARCHAR(128) NOT NULL
 );
 
 CREATE TABLE lots
