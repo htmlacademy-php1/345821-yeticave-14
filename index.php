@@ -2,11 +2,19 @@
 
 
 require_once 'helpers.php';
-require_once 'data.php';
+require_once 'templates/init.php';
 require_once 'function.php';
 
-$page_content = include_template('main.php', ['lots' => $lots]);
+if (!$link) {
+  $error = mysqli_connect_error();
+  $connect = include_template('error.php', ['error' => $error]);
+}
+else {
+  // запрос на получение списка категорий
+  $sql = 'SELECT * FROM categories';
+  $result = mysqli_query($link, $sql);
 
+<<<<<<< Updated upstream
 $layout_content = include_template('layout.php',[
   'content' => $page_content,
   'categories' => $categories,
@@ -15,3 +23,31 @@ $layout_content = include_template('layout.php',[
 
 print($layout_content);
  ?>
+=======
+    if ($result){
+    $categories = mysqli_fetch_all($result, mode: MYSQLI_ASSOC);
+    }
+    else {
+    $error = mysqli_error($link);
+    $content = include_template('error.php', ['error' => $error]);
+  }
+
+  // запрос на показ лотов
+  $sql = 'SELECT l.name, l.start_price, l.img_link, MAX(b.price) AS max_price, categories.name FROM lots'
+   .'LEFT JOIN bet b ON l.id = b.lot_id'
+   .'JOIN categories c ON l.category_id = c.id'
+   .'WHERE l.end_date > NOW()'
+   .'GROUP BY l.id'
+   .'ORDER BY l.сreated_at DESC LIMIT 6';
+
+   if ($res = mysqli_query($link, $sql)){
+      $lots = mysqli_fetch_all($res, mode: MYSQLI_ASSOC);
+      $content = include_template('main.php', ['lots' => $lots]);
+   }
+   else {$content = include_template('error.php', ['error' => mysqli_error($link)]);
+}
+}
+print(include_template('layout.php', ['content' => $content, 'categories' => $categories, 'title' => 'Главная страница']));
+
+?>
+>>>>>>> Stashed changes
