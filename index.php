@@ -1,13 +1,12 @@
 <?php
 
-
 require_once 'helpers.php';
 require_once 'source/init.php';
 require_once 'function.php';
 
 if (!$link) {
   $error = mysqli_connect_error();
-  $connect = include_template('error.php', ['error' => $error]);
+  $content = include_template('error.php', ['error' => $error]);
 }
 else {
   // запрос на получение списка категорий
@@ -23,7 +22,7 @@ else {
   }
 
   // запрос на показ лотов
-   $sql = 'SELECT l.name, l.start_price, l.img_link, MAX(b.price) AS max_price, categories.name FROM lots'
+   $sql = 'SELECT l.name, l.start_price, l.img_link, MAX(b.price) AS max_price, c.name FROM lots l'
    .'LEFT JOIN bet b ON l.id = b.lot_id'
    .'JOIN categories c ON l.category_id = c.id'
    .'WHERE l.end_date > NOW()'
@@ -38,4 +37,4 @@ else {
       $content = include_template('error.php', ['error' => mysqli_error($link)]);
 }
 }
-print(include_template('layout.php', ['content' => $content, 'categories' => $categories, 'title' => 'Главная страница']));
+print(include_template('layout.php', ['content' => $content, 'categories' => $categories]));
