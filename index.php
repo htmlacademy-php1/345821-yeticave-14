@@ -23,7 +23,7 @@ else {
   }
 
   // запрос на показ лотов
-  $sql = 'SELECT l.name, l.start_price, l.img_link, MAX(b.price) AS max_price, categories.name FROM lots'
+   $sql = 'SELECT l.name, l.start_price, l.img_link, MAX(b.price) AS max_price, categories.name FROM lots'
    .'LEFT JOIN bet b ON l.id = b.lot_id'
    .'JOIN categories c ON l.category_id = c.id'
    .'WHERE l.end_date > NOW()'
@@ -34,7 +34,8 @@ else {
       $lots = mysqli_fetch_all($res, mode: MYSQLI_ASSOC);
       $content = include_template('main.php', ['lots' => $lots]);
    }
-   else {$content = include_template('error.php', ['error' => mysqli_error($link)]);
+   else {
+      $content = include_template('error.php', ['error' => mysqli_error($link)]);
 }
 }
 print(include_template('layout.php', ['content' => $content, 'categories' => $categories, 'title' => 'Главная страница']));

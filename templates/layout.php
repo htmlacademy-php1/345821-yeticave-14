@@ -47,7 +47,7 @@
     <ul class="promo__list">
       <?php  foreach ($categories as $cat): ?>
         <li class="promo__item promo__item--<?=$cat[title];?>">
-            <a class="promo__link" href="pages/all-lots.html"><?=$cat;[name]?></a>
+            <a class="promo__link" href="pages/all-lots.html"><?=$cat[name];?></a>
         </li>
 <?php endforeach; ?>
     </ul>
@@ -61,7 +61,7 @@
         <ul class="nav__list container">
         <?php foreach ($categories as $cat): ?>
             <li class="nav__item">
-                  <a href="pages/all-lots.html"><?=$cat;[name]?></a>
+                <a href="pages/all-lots.html"><?=$cat;[name]?></a>
             </li>
     <?php endforeach; ?>
         </ul>
