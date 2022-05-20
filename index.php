@@ -2,7 +2,7 @@
 
 
 require_once 'helpers.php';
-require_once 'templates/init.php';
+require_once 'source/init.php';
 require_once 'function.php';
 
 if (!$link) {
