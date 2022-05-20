@@ -39,5 +39,3 @@ else {
 }
 }
 print(include_template('layout.php', ['content' => $content, 'categories' => $categories, 'title' => 'Главная страница']));
-
-?>

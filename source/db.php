@@ -5,4 +5,4 @@ return[
   'user' => 'root',
   'password'=> '',
   'database' => 'yeticave'
-  ] ?>
+  ] ;
