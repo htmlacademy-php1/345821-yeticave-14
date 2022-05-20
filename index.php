@@ -14,16 +14,6 @@ else {
   $sql = 'SELECT * FROM categories';
   $result = mysqli_query($link, $sql);
 
-<<<<<<< Updated upstream
-$layout_content = include_template('layout.php',[
-  'content' => $page_content,
-  'categories' => $categories,
-  'title' => 'Главная страница'
-]);
-
-print($layout_content);
- ?>
-=======
     if ($result){
     $categories = mysqli_fetch_all($result, mode: MYSQLI_ASSOC);
     }
@@ -50,4 +40,3 @@ print($layout_content);
 print(include_template('layout.php', ['content' => $content, 'categories' => $categories, 'title' => 'Главная страница']));
 
 ?>
->>>>>>> Stashed changes
