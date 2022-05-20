@@ -7,7 +7,7 @@ VALUES (' Доски и лыжи'),('Крепления'),('Ботинки'),('�
 -- заполнение таблицы категорий
 
 INSERT INTO users (dt_reg)
-VALUES (NOW); -- СПОРНЫЙ ВОПРОС С ДАТОЙ!
+VALUES (NOW); 
 INSERT INTO users(email)
 VALUES ('ignat-88@bk.ru'),('test@mail.ru');
 INSERT INTO users (name)
@@ -34,10 +34,6 @@ INSERT INTO lots (up_bet)
 VALUES (500),(500),(500),(500),(500),(500);
 --заполнение таблицы объявлений
 
-
-
-SELECT cat_name FROM catogories;
-=======
 
 INSERT INTO categories (title, name)
 VALUES ('boards', 'Доски и лыжи'),
@@ -106,4 +102,3 @@ FROM bet b
 WHERE b.lot_id = 5
 ORDER BY b.created_at DESC;
 -- получить список ставок для лота по его идентификатору с сортировкой по дате.
->>>>>>> Stashed changes
