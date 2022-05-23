@@ -1,8 +1,14 @@
+
+
 <?php
+
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 
 require_once 'helpers.php';
 require_once 'source/init.php';
 require_once 'function.php';
+require_once 'data.php';
 
 if (!$link) {
   $error = mysqli_connect_error();
@@ -10,7 +16,7 @@ if (!$link) {
 }
 else {
   // запрос на получение списка категорий
-  $sql = 'SELECT id, name, title FROM categories ';
+  $sql = 'SELECT cat_name, cat_id FROM categories';
   $result = mysqli_query($link, $sql);
 
     if ($result){
@@ -37,4 +43,4 @@ else {
       $content = include_template('error.php', ['error' => mysqli_error($link)]);
 }
 }
-print(include_template('layout.php', ['content' => $content, 'categories' => $categories]));
+print(include_template('layout.php', ['content' => $content, 'categories' => $categories,'title' => 'Главная страница']));
