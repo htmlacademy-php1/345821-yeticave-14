@@ -28,7 +28,7 @@ else {
   }
 
   // запрос на показ лотов
-   $sql = 'SELECT l.name, l.start_price, l.img_link, MAX(b.price) AS max_price, c.name FROM lots l '
+   $sql = 'SELECT l.name, l.start_price, l.img_link, MAX(b.price) AS max_price, c.cat_name FROM lots l '
    . 'LEFT JOIN bet b ON l.id = b.lot_id '
    . 'JOIN categories c ON l.category_id = c.id '
    . 'WHERE l.end_date > NOW() '
