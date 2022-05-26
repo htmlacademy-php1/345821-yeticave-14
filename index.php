@@ -1,5 +1,3 @@
-
-
 <?php
 
 error_reporting(E_ALL);
@@ -35,7 +33,6 @@ else {
    . 'WHERE l.end_date > NOW() '
    . 'GROUP BY l.id '
    . 'ORDER BY l.created_at DESC LIMIT 6 ';
-
 
    if ($res = mysqli_query($link, $sql)){
       $lots = mysqli_fetch_all($res, mode: MYSQLI_ASSOC);

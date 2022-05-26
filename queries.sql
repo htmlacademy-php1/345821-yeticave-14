@@ -62,6 +62,7 @@ SET name = 'DC Ply Mens 2017/2018 Snowboard'
 WHERE id = 2;
 -- обновление название лота
 
+
 SELECT b.price
 FROM bet b
 WHERE b.lot_id = 5
